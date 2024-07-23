@@ -21,6 +21,9 @@ app.use((req,res, next)=>{      // it will run everytime before going to routing
     next();
 });
 
+//static file handling     -- merging static and public
+app.use("/static",express.static(path.join(__dirname,"public")));
+
 
 //routing methods
 app.get("/",(req,res)=>{
